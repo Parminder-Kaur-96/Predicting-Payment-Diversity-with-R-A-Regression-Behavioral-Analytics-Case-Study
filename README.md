@@ -1,0 +1,2 @@
+# Predicting-Payment-Diversity-with-R-A-Regression-Behavioral-Analytics-Case-Study
+This marketing analytics project uses R to perform linear regression on consumer survey data, identifying key behavioral predictors of payment method diversity. Analysis includes data cleaning, exploratory analysis, model diagnostics (heteroscedasticity correction with robust SEs), and business recommendations for financial services segmentation
