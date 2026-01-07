@@ -1,0 +1,35 @@
+---
+title: "Assignment2"
+author: "Parminder"
+date: "2025-11-14"
+output: html_document
+---
+
+**Step 0: Setup – Load Packages and Data**
+```{r warning= FALSE}
+# Load necessary libraries
+library(readxl)      # For reading Excel
+library(dplyr)       # For data manipulation
+library(ggplot2)     # For visualizations
+library(corrplot)    # For correlation plots
+library(car)         # For VIF and diagnostic tests
+library(MASS)        # For non-linear regression
+
+# Load dataset
+data <- read_excel("Purchasing_data.xlsx")
+head(data)
+
+
+```
+**Step 1: Data Cleaning**
+```{r}
+# Removing first row as it contains labels
+data_clean <- data[-1, ]
+
+colSums(is.na(data_clean))
+
+# Remove columns with more than 50% missing values
+threshold <- 0.5 * nrow(data)
+data_clean <- data[, colSums(is.na(data)) <= threshold]
+
+
